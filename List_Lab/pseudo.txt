@@ -1,0 +1,52 @@
+﻿class Node 
+    data 
+    next
+class LinkedList 
+    head 
+    tail
+    count
+    
+    Add(data):
+        new node.data = data
+        if(count==0) 
+            // список пустий, додаємо перший елемнт 
+            node.next = null
+            head = node
+            count++
+            return
+            
+        else 
+            // додаємо в кінець списку
+            tail.Next = node
+            tail = node
+        count++
+        return 
+    bool Remove(data)
+        current = head 
+        previous = null
+        while(current != null)
+            // перебір усіх елементів списку 
+            if(current.data == data)
+                // елемент міститься вказані дані,
+                // видаляємо з списку
+                if(previous != null) 
+                    previous.next = current.next
+                    
+                    if(current.Next == null) 
+                        tail = previous
+                        
+                    else 
+                        head = head.Next 
+                        // якщо немає попереднього, то данний елемент є першим у списку
+                       
+                       if(head == null )
+                            tail = null
+              count--
+              return true
+              
+         previous = current
+         current = current.next 
+         // немає такого елементу в списку 
+         return false 
+          
+    
